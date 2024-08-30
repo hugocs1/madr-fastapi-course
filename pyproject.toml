@@ -11,6 +11,11 @@ fastapi = "^0.111.1"
 sqlalchemy = "^2.0.31"
 pydantic-settings = "^2.4.0"
 psycopg = {extras = ["binary"], version = "^3.2.1"}
+alembic = "^1.13.2"
+pydantic = {extras = ["email"], version = "^2.8.2"}
+pyjwt = "^2.9.0"
+pwdlib = {extras = ["argon2"], version = "^0.2.1"}
+python-multipart = "^0.0.9"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.1"
@@ -19,10 +24,12 @@ ruff = "^0.5.4"
 httpx = "^0.27.0"
 taskipy = "^1.13.0"
 testcontainers = "^4.7.2"
+factory-boy = "^3.3.1"
+freezegun = "^1.5.1"
 
 [tool.ruff]
 line-length = 79
-extend-exclude = ['migrations']
+extend-exclude = ['madr/database/migrations']
 
 [tool.ruff.lint]
 preview = true
@@ -37,7 +44,6 @@ pythonpath = "."
 addopts = '-p no:warnings'
 
 [tool.taskipy.tasks]
-lint = 'ruff check . && ruff check . --diff'
 format = 'ruff check . --fix && ruff format .'
 test = 'pytest -s -x --cov=madr -vv'
 post_test = 'coverage html'
