@@ -1,12 +1,13 @@
 from fastapi import FastAPI, status
 
-from madr.routers import auth, users
+from madr.routers import auth, authors, users
 from madr.schemas.health_check import HealthCheck
 
 app = FastAPI()
 
 app.include_router(auth.router)
 app.include_router(users.router)
+app.include_router(authors.router)
 
 
 @app.get(
