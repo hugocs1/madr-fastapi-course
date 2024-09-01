@@ -29,4 +29,4 @@ sudo chmod -R 777 data
 
 ### To Do
 
-- Finish the tests
+- Finish the tests (https://trello.com/b/iHCMYnvl/madr-fastapi-do-zero)
