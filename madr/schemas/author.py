@@ -13,3 +13,7 @@ class AuthorPublic(BaseModel):
 
 class AuthorList(BaseModel):
     authors: list[AuthorPublic]
+
+
+class AuthorUpdate(BaseModel):
+    name: str | None = None
